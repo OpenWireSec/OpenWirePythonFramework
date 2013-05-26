@@ -1,0 +1,27 @@
+#!/usr/bin/env python2.7
+
+import sys
+import Framework
+
+def main():
+	try:
+		fw = Framework.Framework()
+		fw.run()
+
+	except KeyboardInterrupt:
+		print "\n\n"+fw.printBox("red", "-")+"Shutting Down. Ctrl + C Detected\n"
+
+	except EOFError:
+		print "\n\n"+fw.printBox("red", "-")+"Shutting Down.\n"
+
+	except SystemExit:
+		pass
+
+	except:
+		print "\n\n"+fw.printBox("red", "-")+"Shutting Down.\n"
+
+	finally:
+		sys.exit(0)
+
+if __name__ == '__main__':
+	main()
