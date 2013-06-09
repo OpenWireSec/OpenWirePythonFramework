@@ -53,6 +53,7 @@ class Framework:
 		self.useragent = "Mozilla/5.0 (X11 Linux i686) AppleWebKit/535.11 (KHTML, like Gecko) Ubuntu/10.04 Chromium/17.0.963.56 Chrome/17.0.963.56 Safari/535.11"
 		self.regexPath = "#^[a-zA-Z0-9\.\-_~\!\$&\'\(\)\*\+,\=\:@/]+$#"
 		self.threadArray = []
+		# Placeholder for Default Variables, uncomment and modify below to set required variables for all modules
 		#self.defaultVariables = {'target' : {'required' : True, 'description' : 'The target host (ex. www.google.com)'}}
 		self.defaultVariables = {}
 		self.autocomp = ['use', 'view', 'load', 'run', 'exploit', 'check', 'show', 'variables', 'set', 'help', 'list', 'libs', 'clear', 'cls', 'banner', 'exit', 'stop', 'quit', 'time', 'target', 'aux', 'payload']
@@ -222,14 +223,14 @@ class Framework:
 		self.clearThreads()
 
 		# Run Module Defined check method
-		#vulnerable = self.module.check()
-		vulnerable = True
+		vulnerable = self.module.check()
+		
 		if vulnerable:
-			#print self.printBox("green")+ "The target is vulnerable"
-			print "yay"
+			print self.printBox("green")+ "The target is vulnerable"
+			
 		else:
-			#print self.printBox("red")+"The target is not vulnerable"
-			print "nay"
+			print self.printBox("red")+"The target is not vulnerable"
+			
 
 		return True
 
