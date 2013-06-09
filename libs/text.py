@@ -4,7 +4,7 @@ class text:
 
 	def __init__(self, framework):
 		
-		self.framework = framework
+		self.fw = framework
 		self.formattedString = ""
 		self.specialchars = [" ", ",", "@", "#", "$", "%", "^", "&", "=","[", "]", "-", "{", "}", "\\", "/", "*", "!", ".", "_", "(", ")", "+", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 		self.name = "Text"

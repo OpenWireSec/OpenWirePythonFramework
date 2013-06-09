@@ -1,13 +1,31 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python
+#
+# This file is part of the OpenWire Framework.
+#
+#    OpenWire is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    OpenWire is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with OpenWIre.  If not, see <http://www.gnu.org/licenses/>.
 
 import sys
 import Framework
 
+# Run OpenWire
 def main():
+	
 	try:
 		fw = Framework.Framework()
 		fw.run()
 
+	# Handle ctrl + C signal from user
 	except KeyboardInterrupt:
 		print "\n\n"+fw.printBox("red", "-")+"Shutting Down. Ctrl + C Detected\n"
 
@@ -18,9 +36,14 @@ def main():
 		pass
 
 	except:
-		print "\n\n"+fw.printBox("red", "-")+"Shutting Down.\n"
+		e = sys.exc_info()
+		print "\n\n"+fw.printBox("red", "-")+"Error Detected... Shutting Down.\n"
+		for error in e:
+			print error
 
 	finally:
+		e = sys.exc_info()[1]
+		print e
 		sys.exit(0)
 
 if __name__ == '__main__':

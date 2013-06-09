@@ -3,9 +3,9 @@ class colours:
 	
 	def __init__(self, framework):
 
-		self.framework = framework
+		self.fw = framework
 
-		#self.framework = framework
+		#self.fw = framework
 	   	self.name = 'Colours'
 	   	self.description = 'Library to provide text colouring in python CLI'
 				
