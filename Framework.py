@@ -184,7 +184,7 @@ class Framework:
 			
 			# Clear the terminal output and print a banner
 			elif commands[0] == 'banner':
-				self.outputHeader()
+				self.core.coreMain.outputHeader()
 
 			# Disable HAL-9000 Higher Function Modules
 			elif commands[0] == 'pewpew':

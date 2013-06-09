@@ -34,9 +34,8 @@ class core:
             return False
         coref = "core."+str(core)
         if not os.path.isfile("core/"+core+".py"):
-            #print self.fw.prompt + " " + coref + " is not a valid library"
+            print self.fw.prompt + " " + coref + " is not a valid library"
             return False
-        #print self.fw.prompt+" Loading Core " + core
         coreFile = self.ezImport(coref)
         setattr(self, str(core), coreFile(self.fw))
 
